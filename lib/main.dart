@@ -23,6 +23,7 @@ class HomeActivity extends StatefulWidget{
 
 class _HomeActivityState extends State<HomeActivity> {
   bool isChecked = false;
+  String gender = 'Male';
 
   @override
   Widget build(BuildContext context) {
@@ -36,11 +37,14 @@ class _HomeActivityState extends State<HomeActivity> {
         children: [Center(child: CircleAvatar(radius: 50,
         backgroundColor: Colors.purpleAccent,),),
         SizedBox(height: 10,),
-        Center(child: Text("Saleh Akram Sifat", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, color: Colors.deepPurpleAccent),),),
+        Center(child: Text("Saleh Akram Sifat",
+          style: TextStyle(fontWeight: FontWeight.bold,
+              fontSize: 30, color: Colors.deepPurpleAccent),),),
 
           SizedBox(height: 20,),
           Row(
-            children: [Icon(Icons.email),SizedBox(width: 5,), Text("Salehakramsifat@gmail.com", style: TextStyle(fontSize: 15),)],),
+            children: [Icon(Icons.email),SizedBox(width: 5,),
+              Text("Salehakramsifat@gmail.com", style: TextStyle(fontSize: 15),)],),
           SizedBox(height: 20,),
           TextField(decoration:  InputDecoration(labelText: "Enter your name",border: OutlineInputBorder()),),
 
@@ -50,8 +54,28 @@ class _HomeActivityState extends State<HomeActivity> {
               isChecked=value!;
             }
             );
-          })
+          }),
+          SizedBox(height: 20,),
+          Text("Gender", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), Row(
+            children: [Radio(value: "Male", groupValue: gender, onChanged: (String? value){
+              setState((){
+                gender = value!;
+            });
+            }),Text("Male"),
 
+              Radio(value: "Female", groupValue: gender, onChanged: (String? value){
+              setState((){
+                gender = value!;
+            });
+            }),Text("Female")],),
+
+          
+          SizedBox(height: 30,),
+          Center(child: ElevatedButton(onPressed: (){ScaffoldMessenger.of(context).
+          showSnackBar(SnackBar(content: Text("Saved"),),);},
+              child: Text("Submit")
+
+            ,),)
         ],),),
 
     );
