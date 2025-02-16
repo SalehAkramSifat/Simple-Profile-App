@@ -32,10 +32,12 @@ class _HomeActivityState extends State<HomeActivity> {
         style: TextStyle(fontSize: 20,
             fontWeight: FontWeight.bold),)
       ,centerTitle: true,),
+
       body: Padding(padding: EdgeInsets.all(17),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start,
         children: [Center(child: CircleAvatar(radius: 50,
         backgroundColor: Colors.purpleAccent,),),
+
         SizedBox(height: 10,),
         Center(child: Text("Saleh Akram Sifat",
           style: TextStyle(fontWeight: FontWeight.bold,
