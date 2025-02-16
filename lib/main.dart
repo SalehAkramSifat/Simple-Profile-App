@@ -48,18 +48,21 @@ class _HomeActivityState extends State<HomeActivity> {
             children: [Icon(Icons.email),SizedBox(width: 5,),
               Text("Salehakramsifat@gmail.com", style: TextStyle(fontSize: 15),)],),
           SizedBox(height: 20,),
-          TextField(decoration:  InputDecoration(labelText: "Enter your name",border: OutlineInputBorder()),),
+          TextField(decoration:  InputDecoration(labelText: "Enter your name",
+              border: OutlineInputBorder()),),
 
           SizedBox(height: 5,),
-          CheckboxListTile(title:Text("I Agree to this terms"),value: isChecked, onChanged: (bool? value){
+          CheckboxListTile(title:Text("I Agree to this terms"),
+              value: isChecked, onChanged: (bool? value){
             setState((){
               isChecked=value!;
             }
             );
           }),
           SizedBox(height: 20,),
-          Text("Gender", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), Row(
-            children: [Radio(value: "Male", groupValue: gender, onChanged: (String? value){
+          Text("Gender", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+          Row(children: [Radio(value: "Male", groupValue: gender,
+              onChanged: (String? value){
               setState((){
                 gender = value!;
             });
